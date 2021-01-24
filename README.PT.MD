@@ -1,4 +1,4 @@
-# This is a survey that evaluates in a synthetic way the deliberative ui in January 2021
+# Esta é uma pesquisa que avalia de forma sintética a interface do usuário declarativa em janeiro de 2021
 
 Desde os primórdios da web, que programadores de todas as idades trabalham com css, visto que é um ponto fundamental para que haja estilização nas páginas no desenvolvimento web. Para tanto, até os anos 2010, eram usados seletores como ID, classes, etc. Porém, com o advento da web e a progressão exponencial de informações, houve a necessidade de criar ferramentas que atendessem essa demanda de forma mais eficaz. É aí que surge o paradigma da UI Declarativa. Nesse padrão, as coisas funcionam um pouco diferente, a forma de estilização vem dentro do html, em cada elemento, usando props, por exemplo, no react js.
 O seguinte trabalho vista descobrir quais, quantitativamente, as melhores UIs Declarativas em janeiro de 2021. Para isso, analisaremos dados dos site **stackoverflow**, em inglês, **github** e **npm**.
@@ -32,14 +32,16 @@ Os pacotes entorno dessa pesquisa serão:
 <tbody>
 <tr style="border:1px solid #000">
     <td style="border:1px solid #000">Github:</td>
-    <td style="border:1px solid #000">https://github.com/ant-design/ant-design</td></tr><tr style="border:1px solid #000">
+    <td style="border:1px solid #000">
+    <a href="https://github.com/ant-design/ant-design">https://github.com/ant-design/ant-design</a>
+    </td></tr><tr style="border:1px solid #000">
     <td style="border:1px solid #000">Github:</td>
     <td style="border:1px solid #000">66.4k</td></tr>
     <tr style="border:1px solid #000">
     <td style="border:1px solid #000">Issues</td>
     <td style="border:1px solid #000">553</td></tr>
     <tr style="border:1px solid #000">
-    <td style="border:1px solid #000">Stackoverflow</td><td style="border:1px solid #000">2,864 questions</td></tr>
+    <td style="border:1px solid #000">Stackoverflow</td><td style="border:1px solid #000">2,864 questões</td></tr>
     <tr style="border:1px solid #000">
     <td style="border:1px solid #000">Contribuidores</td><td style="border:1px solid #000">+1352</td></tr><tr style="border:1px solid #000">
     <td style="border:1px solid #000">NPM</td><td style="border:1px solid #000">+515.889</td></tr>
