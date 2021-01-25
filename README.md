@@ -1,4 +1,4 @@
-# Esta é uma pesquisa que avalia de forma sintética a interface de pacotes que _UI declarative_ em janeiro de 2021
+# Esta é uma pesquisa que avalia de forma sintética a interface de pacotes que usam _UI declarative_ em janeiro de 2021
 
 ## Glossário
 
