@@ -134,4 +134,25 @@ Site: ${site}
   }
 );
 
-console.log(str);
+let str2: string;
+data.map(
+  (
+    {
+      Contribuidores,
+      Issues,
+      NPM,
+      Stackoverflow,
+      Star,
+      about,
+      github,
+      name,
+      site,
+    }: Survey,
+    index: number
+  ) => {
+    str2 += `
+- ${index+1}. ${name}`;
+  }
+);
+
+console.log(str2);

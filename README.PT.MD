@@ -6,13 +6,13 @@
 - [Mas afinal, o que é UI Declarative?](#Conceito)
 - [Variáveis Analisadas](#variáveisanalisadas)
 - [Os pacotes entorno dessa pesquisa]()
-- [Análise dos pacotes]()
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
-  - 6
+- [Análise dos pacotes:]()
+  1. Ant-designer
+  2. Material-UI
+  3. Chackra-ui
+  4. Styled-system
+  5. Semantic-UI-React
+  6. React-Bootstrap
 
 # Introdução
 
@@ -63,7 +63,12 @@ if (this.state.liked) {
 5. Semantic-UI
 6. React-Bootstrap
 
-# Variáveis analisadas:
+> **Nota sobre o styled-components** <br/>
+> O motivo pelo qual não o coloquei é que, na verdade, styled-components não é uma lib declarativa, antes, usa CSS-in-JS.
+
+---
+
+# Variáveis analisadas em cada pacote:
 
 - **Star** (github) - a quantidade de estrela no github, que facilita a localização posterior de um repositório ou tópico, além disso, mostra a quantidade relativa de pessoas que usam o pacote.
 - **Issues** (github) - Lugar onde o usuário contribuem para o projeto, seja na quantidade de problemas, dicas, melhorias do pacote, etc.
