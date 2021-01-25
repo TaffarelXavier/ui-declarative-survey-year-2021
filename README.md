@@ -34,6 +34,7 @@ A UI declarativa não é um conceito novo no mundo do desenvolvimento, mas está
 # Imperatividade versus Declarativo
 
 Imagine um componente de IU simples, como um botão "Curtir". Quando você toca nele, ele fica azul se antes era cinza e cinza se era azul.
+
 **Exemplo Imperativo**
 
 ```js
