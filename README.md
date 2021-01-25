@@ -267,5 +267,8 @@ https://softwareengineering.stackexchange.com/questions/173354/what-is-declarati
 https://old.black/2020/10/06/what-is-declarative-ui/
 . Acessado em 21 de janeiro de 2021.
 
-**Difference between declarative and imperative in React.js?**
-https://stackoverflow.com/questions/33655534/difference-between-declarative-and-imperative-in-react-js
+**Difference between declarative and imperative in React.js?**. Disponível em
+https://stackoverflow.com/questions/33655534/difference-between-declarative-and-imperative-in-react-js. Acessado em 22 de janeiro de 2021.
+
+**Styling Components In React**. Disponível em
+https://www.smashingmagazine.com/2020/05/styling-components-react. Acessado em 23 de janeiro de 2021.
