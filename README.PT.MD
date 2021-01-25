@@ -25,6 +25,35 @@ Mas afinal, o que é UI Declarative?
 
 A IU declarativa não é um conceito novo no mundo do desenvolvimento, mas está ganhando impulso no SDK nativo móvel, provavelmente depois que algumas outras estruturas de plataforma cruzada começaram a explorar essas abordagens. Aprender como usá-los implica em mudar a maneira como imaginamos os layouts e as interfaces gráficas de usuário nos últimos anos. Dessa forma, UI Declarativa é o processo que descreve em algum tipo de linguagem quais elementos você precisa em sua IU e, até certo ponto, como eles deveriam ser, mas você pode omitir detalhes como a posição exata e o estilo visual dos elementos. Por exemplo, em HTML, você pode descrever que deseja um campo de entrada, mas como e onde esse campo será colocado na IU depende muito do navegador que você está usando. Nesse formato, o usuário descreve sua IU como funções que transformam dados em uma hierarquia de IU. Hoje, o termo é usado com mais frequência para estruturas de IU com uma separação estrita da aparência da IU do comportamento, o que significa que o código reage aos eventos da IU. Por exemplo, usando XAML, você declara a aparência de sua interface do usuário em um dialeto XML específico, mas implementa o comportamento em código de programa separado.
 
+**O benefício do declarativo é que você não se atola nos detalhes de implementação da representação do estado. Você está delegando o componente organizacional de manter as visualizações do aplicativo consistentes, então você só precisa se preocupar com o estado.**
+
+# Imperatividade versus Declarativo
+
+Imagine um componente de IU simples, como um botão "Curtir". Quando você toca nele, ele fica azul se antes era cinza e cinza se era azul.
+**Exemplo Imperativo**
+
+```js
+if (user.likes()) {
+  if (hasBlue()) {
+    removeBlue();
+    addGrey();
+  } else {
+    removeGrey();
+    addBlue();
+  }
+}
+```
+
+**Exemplo Declarativo**
+
+```js
+if (this.state.liked) {
+  return <blueLike />;
+} else {
+  return <greyLike />;
+}
+```
+
 # Os pacotes entorno dessa pesquisa serão:
 
 1. Ant-designer
@@ -32,7 +61,7 @@ A IU declarativa não é um conceito novo no mundo do desenvolvimento, mas está
 3. Chackria
 4. Styled-system
 5. Semantic-UI
-6. react-bootstrap
+6. React-Bootstrap
 
 # Variáveis analisadas:
 
@@ -46,6 +75,8 @@ A IU declarativa não é um conceito novo no mundo do desenvolvimento, mas está
 
 ## 1. Ant-designer
 
+Um sistema de design para produtos de nível empresarial. Crie uma experiência de trabalho eficiente e agradável.
+
 <table>
 <tbody>
 <tr style="border:1px solid #000">
@@ -53,18 +84,172 @@ A IU declarativa não é um conceito novo no mundo do desenvolvimento, mas está
     <td style="border:1px solid #000">
     <a href="https://github.com/ant-design/ant-design">https://github.com/ant-design/ant-design</a>
     </td></tr><tr style="border:1px solid #000">
-    <td style="border:1px solid #000">Github:</td>
+    <td style="border:1px solid #000">Star:</td>
     <td style="border:1px solid #000">66.4k</td></tr>
     <tr style="border:1px solid #000">
     <td style="border:1px solid #000">Issues</td>
     <td style="border:1px solid #000">553</td></tr>
     <tr style="border:1px solid #000">
-    <td style="border:1px solid #000">Stackoverflow</td><td style="border:1px solid #000">2,864 questões</td></tr>
+    <td style="border:1px solid #000">Stackoverflow</td><td style="border:1px solid #000">2,864 questions</td></tr>
     <tr style="border:1px solid #000">
     <td style="border:1px solid #000">Contribuidores</td><td style="border:1px solid #000">+1352</td></tr><tr style="border:1px solid #000">
-    <td style="border:1px solid #000">NPM</td><td style="border:1px solid #000">+515.889</td></tr>
+    <td style="border:1px solid #000">NPM</td><td style="border:1px solid #000">515.889</td></tr>
 </tbody>
 </table>
+
+<br/>
+
+Site: https://ant.design/
+
+---
+
+## 2. Material-UI
+
+Biblioteca de componentes React para um desenvolvimento ágil e fácil. Construa seu próprio design, ou comece com Material Design.
+
+<table>
+<tbody>
+<tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Github:</td>
+    <td style="border:1px solid #000">
+    <a href="https://github.com/mui-org/material-ui">https://github.com/mui-org/material-ui</a>
+    </td></tr><tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Star:</td>
+    <td style="border:1px solid #000">64.6k</td></tr>
+    <tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Issues</td>
+    <td style="border:1px solid #000">446</td></tr>
+    <tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Stackoverflow</td><td style="border:1px solid #000"> 500 results</td></tr>
+    <tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Contribuidores</td><td style="border:1px solid #000">+2079</td></tr><tr style="border:1px solid #000">
+    <td style="border:1px solid #000">NPM</td><td style="border:1px solid #000">1.504.274</td></tr>
+</tbody>
+</table>
+
+<br/>
+
+Site: https://material-ui.com
+
+---
+
+## 3. Chackra-ui
+
+Chakra UI é uma biblioteca de componentes simples, modular e acessível que fornece os blocos de construção de que você precisa para construir seus aplicativos React.
+
+<table>
+<tbody>
+<tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Github:</td>
+    <td style="border:1px solid #000">
+    <a href="https://github.com/chakra-ui/chakra-ui">https://github.com/chakra-ui/chakra-ui</a>
+    </td></tr><tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Star:</td>
+    <td style="border:1px solid #000">14.6k</td></tr>
+    <tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Issues</td>
+    <td style="border:1px solid #000">81</td></tr>
+    <tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Stackoverflow</td><td style="border:1px solid #000">30 questions</td></tr>
+    <tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Contribuidores</td><td style="border:1px solid #000">+310</td></tr><tr style="border:1px solid #000">
+    <td style="border:1px solid #000">NPM</td><td style="border:1px solid #000">32.280</td></tr>
+</tbody>
+</table>
+
+<br/>
+
+Site: https://chakra-ui.com/
+
+---
+
+## 4. Styled-system
+
+O Styled System permite que você crie rapidamente componentes de UI personalizados com adereços de estilo baseados em restrições com base em escalas definidas em seu tema
+
+<table>
+<tbody>
+<tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Github:</td>
+    <td style="border:1px solid #000">
+    <a href="https://github.com/styled-system/styled-system">https://github.com/styled-system/styled-system</a>
+    </td></tr><tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Star:</td>
+    <td style="border:1px solid #000">6.5k</td></tr>
+    <tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Issues</td>
+    <td style="border:1px solid #000">69</td></tr>
+    <tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Stackoverflow</td><td style="border:1px solid #000">14 questions</td></tr>
+    <tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Contribuidores</td><td style="border:1px solid #000">+109</td></tr><tr style="border:1px solid #000">
+    <td style="border:1px solid #000">NPM</td><td style="border:1px solid #000">387.930</td></tr>
+</tbody>
+</table>
+
+<br/>
+
+Site: https://styled-system.com/
+
+---
+
+## 5. Semantic-UI-React
+
+O Semantic UI é um framework de desenvolvimento rápido que te ajuda a criar layouts responsivos utilizando o HTML de uma forma simples e fácil.
+
+<table>
+<tbody>
+<tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Github:</td>
+    <td style="border:1px solid #000">
+    <a href="https://github.com/Semantic-Org/Semantic-UI-React">https://github.com/Semantic-Org/Semantic-UI-React</a>
+    </td></tr><tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Star:</td>
+    <td style="border:1px solid #000">12k</td></tr>
+    <tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Issues</td>
+    <td style="border:1px solid #000">104</td></tr>
+    <tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Stackoverflow</td><td style="border:1px solid #000">838 questions</td></tr>
+    <tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Contribuidores</td><td style="border:1px solid #000">307</td></tr><tr style="border:1px solid #000">
+    <td style="border:1px solid #000">NPM</td><td style="border:1px solid #000">187.024</td></tr>
+</tbody>
+</table>
+
+<br/>
+
+Site: https://semantic-ui.com/introduction/integrations.html
+
+---
+
+## 6. React-Bootstrap
+
+Como uma das bibliotecas React mais antigas, React-Bootstrap evoluiu e cresceu junto com React, tornando-se uma excelente escolha como sua base de IU.
+
+<table>
+<tbody>
+<tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Github:</td>
+    <td style="border:1px solid #000">
+    <a href="https://github.com/react-bootstrap/react-bootstrap">https://github.com/react-bootstrap/react-bootstrap</a>
+    </td></tr><tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Star:</td>
+    <td style="border:1px solid #000">18.9k</td></tr>
+    <tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Issues</td>
+    <td style="border:1px solid #000">96</td></tr>
+    <tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Stackoverflow</td><td style="border:1px solid #000">2,676 questions</td></tr>
+    <tr style="border:1px solid #000">
+    <td style="border:1px solid #000">Contribuidores</td><td style="border:1px solid #000">387</td></tr><tr style="border:1px solid #000">
+    <td style="border:1px solid #000">NPM</td><td style="border:1px solid #000">688.455</td></tr>
+</tbody>
+</table>
+
+<br/>
+
+Site: https://react-bootstrap.github.io/
 
 ---
 
@@ -76,3 +261,6 @@ https://softwareengineering.stackexchange.com/questions/173354/what-is-declarati
 **What is Declarative UI?**. Disponível em
 https://old.black/2020/10/06/what-is-declarative-ui/
 . Acessado em 21 de janeiro de 2021.
+
+**Difference between declarative and imperative in React.js?**
+https://stackoverflow.com/questions/33655534/difference-between-declarative-and-imperative-in-react-js
