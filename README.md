@@ -1,5 +1,9 @@
 # Esta é uma pesquisa que avalia de forma sintética a interface do pacotes que _UI declarative_ em janeiro de 2021
 
+## Glossário
+
+- **UI** - _User Interface_
+
 ## Conteúdo
 
 - [Introdução](#Introdução)
@@ -23,7 +27,7 @@ O seguinte trabalho vista descobrir quais, quantitativamente, as melhores UIs De
 
 Mas afinal, o que é UI Declarative?
 
-A IU declarativa não é um conceito novo no mundo do desenvolvimento, mas está ganhando impulso no SDK nativo móvel, provavelmente depois que algumas outras estruturas de plataforma cruzada começaram a explorar essas abordagens. Aprender como usá-los implica em mudar a maneira como imaginamos os layouts e as interfaces gráficas de usuário nos últimos anos. Dessa forma, UI Declarativa é o processo que descreve em algum tipo de linguagem quais elementos você precisa em sua IU e, até certo ponto, como eles deveriam ser, mas você pode omitir detalhes como a posição exata e o estilo visual dos elementos. Por exemplo, em HTML, você pode descrever que deseja um campo de entrada, mas como e onde esse campo será colocado na IU depende muito do navegador que você está usando. Nesse formato, o usuário descreve sua IU como funções que transformam dados em uma hierarquia de IU. Hoje, o termo é usado com mais frequência para estruturas de IU com uma separação estrita da aparência da IU do comportamento, o que significa que o código reage aos eventos da IU. Por exemplo, usando XAML, você declara a aparência de sua interface do usuário em um dialeto XML específico, mas implementa o comportamento em código de programa separado.
+A UI declarativa não é um conceito novo no mundo do desenvolvimento, mas está ganhando impulso no SDK nativo móvel e web, provavelmente depois que algumas outras estruturas de plataforma cruzada começaram a explorar essas abordagens. Aprender como usá-los implica em mudar a maneira como imaginamos os layouts e as interfaces gráficas de usuário nos últimos anos. Dessa forma, UI Declarativa é o processo que descreve em algum tipo de linguagem quais elementos você precisa em sua UI e, até certo ponto, como eles deveriam ser, mas você pode omitir detalhes como a posição exata e o estilo visual dos elementos. Por exemplo, em HTML, você pode descrever que deseja um campo de entrada, mas como e onde esse campo será colocado na UI depende muito do navegador que você está usando. Nesse formato, o usuário descreve sua UI como funções que transformam dados em uma hierarquia de UI. Hoje, o termo é usado com mais frequência para estruturas de UI com uma separação estrita da aparência da UI do comportamento, o que significa que o código reage aos eventos da IU. Por exemplo, usando XAML, você declara a aparência de sua interface do usuário em um dialeto XML específico, mas implementa o comportamento em código de programa separado.
 
 **O benefício do declarativo é que você não se atola nos detalhes de implementação da representação do estado. Você está delegando o componente organizacional de manter as visualizações do aplicativo consistentes, então você só precisa se preocupar com o estado.**
 
