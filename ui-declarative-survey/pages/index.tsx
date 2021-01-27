@@ -260,7 +260,7 @@ const IndexPage: NextPage<PropsPackage> = (props) => {
         documentações não deixam a desejar, todavia, há alguns pacotes que têm
         sempre uma funcionalidade a mais que outros. Por exemplo: o Material UI
         tem um autocomplete fantástico, o react-boostrap tem uma tabela
-        fantástica. O Ant-designer tem um _boilerplate_ de layout com drawer
+        fantástica. O Ant-designer tem um <i>boilerplate</i> de layout com drawer
         sensacional. Diante dessas afirmações e constatações, após a análise
         quantitativa dos dados, chego à conclusão que a melhor opção é o
         Material-UI: mais downloads no npm, um grande leque de questões no
