@@ -199,12 +199,12 @@ const IndexPage: NextPage<PropsPackage> = (props) => {
                 <tr style={{ border: "1px solid  #ccc" }}>
                   <td style={{ border: "1px solid  #ccc" }}>Contribuidores</td>
                   <td style={{ border: "1px solid  #ccc" }}>
-                    {props.data[0][index]}
+                    {el.Contribuidores}
                   </td>
                 </tr>
                 <tr style={{ border: "1px solid  #ccc" }}>
                   <td style={{ border: "1px solid  #ccc" }}>NPM</td>
-                  <td style={{ border: "1px solid  #ccc" }}>{el.NPM}</td>
+                  <td style={{ border: "1px solid  #ccc" }}>{props.data[0][index]}</td>
                 </tr>
                 <tr style={{ border: "1px solid  #ccc" }}>
                   <td style={{ border: "1px solid  #ccc" }}>Site</td>
