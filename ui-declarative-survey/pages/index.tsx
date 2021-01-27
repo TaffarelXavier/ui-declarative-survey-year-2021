@@ -7,9 +7,8 @@ import {
   readDataFromPackageNpm,
   readDataFromStackOverFlow,
 } from "../lib/request";
-
+import Highlight from "react-highlight.js";
 import Grafico from "@/components/Charts/Model";
-// import Issues from "@/components/Charts/Issues";
 
 interface IPackage {
   package?: string;
@@ -29,11 +28,10 @@ interface PropsPackage {
   date?: string;
 }
 
-const markdown = `# Esta é uma pesquisa que avalia de forma sintética a interface de pacotes que usam _UI declarative_.
+const markdown = `
+
+> Por Taffarel Xavier | [github](https://github.com/TaffarelXavier) | [Pt.stackoverflow](https://pt.stackoverflow.com/users/66026/taffarel-xavier)
 ----
-Por Taffarel Xavier | [github](https://github.com/TaffarelXavier) | [Pt.Stackoverflow](https://pt.stackoverflow.com/users/66026/taffarel-xavier)
-----
-Detalhe os dados são atualizados periódico e automaticamente.
 
 ## Glossário
 
@@ -69,11 +67,17 @@ A UI declarativa não é um conceito novo no mundo do desenvolvimento, mas está
 # Imperatividade versus Declarativo
 
 Imagine um componente de IU simples, como um botão "Curtir". Quando você toca nele, ele fica azul se antes era cinza e cinza se era azul.
+`;
 
-**Exemplo Imperativo**
-
-\`\`\`js
-if (user.likes()) {
+const Mark = () => {
+  return (
+    <>
+      {" "}
+      <p>
+        <strong>Exemplo Imperativo</strong>
+      </p>
+      <Highlight language={"javascript"}>
+        {`if (user.likes()) {
   if (hasBlue()) {
     removeBlue();
     addGrey();
@@ -81,19 +85,23 @@ if (user.likes()) {
     removeGrey();
     addBlue();
   }
-}
-\`\`\`
-
-**Exemplo Declarativo**
-
-\`\`\`js
-if (this.state.liked) {
+}`}
+      </Highlight>
+      <p>
+        <strong>Exemplo Declarativo</strong>
+      </p>
+      <Highlight language={"javascript"}>
+        {`if (this.state.liked) {
   return <blueLike />;
 } else {
   return <greyLike />;
-}
-\`\`\`
+}`}
+      </Highlight>
+    </>
+  );
+};
 
+const otherContent = `
 # Os pacotes entorno dessa pesquisa serão:
 
 1. Ant-designer
@@ -117,14 +125,6 @@ if (this.state.liked) {
 
 ---`;
 
-const MuDAta = () => {
-  return (
-    <>
-      <ReactMarkdown children={markdown} />
-    </>
-  );
-};
-
 const IndexPage: NextPage<PropsPackage> = (props) => {
   const myDataArr: IPackage[] = props.data[2];
 
@@ -145,8 +145,18 @@ const IndexPage: NextPage<PropsPackage> = (props) => {
   return (
     <Layout title="UI Declarative Survey Year 2021">
       <br />
-      <MuDAta />
-      <p>Última atualização de dados: {props.date}</p>
+      <h1>
+        Esta é uma pesquisa que avalia de forma sintética a interface de pacotes
+        que usam <i>UI declarative</i>.
+      </h1>
+      <p>
+        Última atualização de dados: {props.date} <br />
+        Detalhe:{" "}
+        <strong>os dados são atualizados periódico e automaticamente.</strong>
+      </p>
+      <ReactMarkdown children={markdown} />
+      <Mark />
+      <ReactMarkdown children={otherContent} />
       {props.data[2].map((el: Survey, index) => {
         return (
           <div
@@ -243,7 +253,7 @@ const IndexPage: NextPage<PropsPackage> = (props) => {
       </div>
       <hr />
       <br />
-      <h1 className="font-weight-bold">Conclusão do autor</h1>
+      <h1>Conclusão do autor</h1>
       <p>
         Já programei com as 5 desses pacotes, com exceção do{" "}
         <strong>Styled-system</strong>. E posso afirmar que todas as
@@ -256,9 +266,9 @@ const IndexPage: NextPage<PropsPackage> = (props) => {
         Material-UI: mais downloads no npm, um grande leque de questões no
         stackoverflow, o que nos leva a entender que, ao procuramos alguma
         questão no site, é provável que encontraremos algo com a mesma dúvida
-        com a qual estamos, além disso, o MUI tem o maior número de contribuidores, 
-        mas não há tantas issues quanto o Ant-design. Dessa forma, hoje, em um novo projeto,
-        optaria pelo Material-UI.
+        com a qual estamos, além disso, o MUI tem o maior número de
+        contribuidores, mas não há tantas issues quanto o Ant-design. Dessa
+        forma, hoje, em um novo projeto, optaria pelo Material-UI.
       </p>
     </Layout>
   );
@@ -328,6 +338,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: { data: newArr, date }, // will be passed to the page component as props
+    // props: { data: [] }, // will be passed to the page component as props
   };
 };
 

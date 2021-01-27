@@ -59,13 +59,6 @@ export async function getData(urlGithub: string[][]): Promise<any[]> {
         ?.trim()
         .replace(/\D+/gim, "");
     }
-
-    //Ant 2
-    //Material 2
-    //Chackra-ui 3
-    //Styled-system 3
-    //Semantic-UI-React 3
-    //React 3
     return new Promise<Survey>((resolve) => {
       resolve({
         name,
