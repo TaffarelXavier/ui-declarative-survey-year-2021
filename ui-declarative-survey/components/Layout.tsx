@@ -16,10 +16,13 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
     </Head>
     <main className="main">
       {children}
-       <br/><br/>
-       <hr/>
+      <br />
+      <br />
+      <hr />
       <footer>
-        <span>&copy; 2021 <strong> - Taffarel Xavier</strong></span>
+        <span>
+          &copy; 2021 <strong> - Taffarel Xavier</strong>
+        </span>
         <ul className="network-media">
           <li>
             <a href="https://github.com/TaffarelXavier" target="_blank">
@@ -38,9 +41,17 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
               </svg>
             </a>
           </li>
-          <li style={{marginLeft:30}}>
-            <a href="https://pt.stackoverflow.com/users/66026/taffarel-xavier" target="_blank">
-            <img src="/stack-overflow-icon.svg" width={40} height={40} alt=""/>
+          <li style={{ marginLeft: 30 }}>
+            <a
+              href="https://pt.stackoverflow.com/users/66026/taffarel-xavier"
+              target="_blank"
+            >
+              <img
+                src="/stack-overflow-icon.svg"
+                width={40}
+                height={40}
+                alt=""
+              />
             </a>
           </li>
         </ul>
