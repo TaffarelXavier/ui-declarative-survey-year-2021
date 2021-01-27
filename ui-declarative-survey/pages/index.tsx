@@ -30,7 +30,8 @@ interface PropsPackage {
 }
 
 const markdown = `# Esta é uma pesquisa que avalia de forma sintética a interface de pacotes que usam _UI declarative_.
-Por Taffarel Xavier
+
+Por Taffarel Xavier | [github](https://github.com/TaffarelXavier) | [Pt.Stackoverflow](https://pt.stackoverflow.com/users/66026/taffarel-xavier)
 ----
 Detalhe os dados são atualizados periódico e automaticamente.
 
@@ -150,7 +151,7 @@ const IndexPage: NextPage<PropsPackage> = (props) => {
         return (
           <div
             key={el.name}
-            style={{ marginBottom: 20, borderBottom: "1px solid #ccc" }}
+            style={{ marginBottom: 30, borderBottom: "1px solid #ccc" }}
           >
             <h3>
               <strong>
@@ -194,13 +195,16 @@ const IndexPage: NextPage<PropsPackage> = (props) => {
                   <td style={{ border: "1px solid  #ccc" }}>NPM</td>
                   <td style={{ border: "1px solid  #ccc" }}>{el.NPM}</td>
                 </tr>
+                <tr style={{ border: "1px solid  #ccc" }}>
+                  <td style={{ border: "1px solid  #ccc" }}>Site</td>
+                  <td style={{ border: "1px solid  #ccc" }}>
+                    <a href={el.site} target="_blank">
+                      {el.site}
+                    </a>
+                  </td>
+                </tr>
               </tbody>
             </table>
-            <br />
-            Site:{" "}
-            <a href={el.site} target="_blank">
-              {el.site}
-            </a>
           </div>
         );
       })}
@@ -284,19 +288,19 @@ export const getStaticProps: GetStaticProps = async () => {
       "https://github.com/styled-system/styled-system",
       "Styled-system",
       "https://styled-system.com/",
-      "O Styled System permite que você crie rapidamente componentes de UI personalizados com adereços de estilo baseados em restrições com base em escalas definidas em seu tema."
+      "O Styled System permite que você crie rapidamente componentes de UI personalizados com adereços de estilo baseados em restrições com base em escalas definidas em seu tema.",
     ],
     [
       "https://github.com/Semantic-Org/Semantic-UI-React",
       "Semantic-UI-React",
       "https://react.semantic-ui.com/",
-      "O Semantic UI é um framework de desenvolvimento rápido que te ajuda a criar layouts responsivos utilizando o HTML de uma forma simples e fácil."
+      "O Semantic UI é um framework de desenvolvimento rápido que te ajuda a criar layouts responsivos utilizando o HTML de uma forma simples e fácil.",
     ],
     [
       "https://github.com/react-bootstrap/react-bootstrap",
       "React-Bootstrap",
       "https://react-bootstrap.github.io/",
-      'Projete e personalize rapidamente sites mobile-first responsivos com Bootstrap, o kit de ferramentas de front-end open source mais popular do mundo, apresentando variáveis ​​e mixins Sass, sistema de grade responsivo, extensos componentes pré-construídos e poderosos plug-ins JavaScript.'
+      "Projete e personalize rapidamente sites mobile-first responsivos com Bootstrap, o kit de ferramentas de front-end open source mais popular do mundo, apresentando variáveis ​​e mixins Sass, sistema de grade responsivo, extensos componentes pré-construídos e poderosos plug-ins JavaScript.",
     ],
   ]);
 
