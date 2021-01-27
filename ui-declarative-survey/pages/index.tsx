@@ -274,21 +274,32 @@ const IndexPage: NextPage<PropsPackage> = (props) => {
       <p>
         <strong>REFERÊNCIAS</strong>
       </p>
-      <strong>What is Declarative UI?.</strong> Disponível em
-      https://softwareengineering.stackexchange.com/questions/173354/what-is-declarative-ui.
-      Acessado em 21 de janeiro de 2021.
-      <strong>What is Declarative UI?.</strong> Disponível em
-      https://old.black/2020/10/06/what-is-declarative-ui/ . Acessado em 21 de
-      janeiro de 2021.
-      <strong>
-        Difference between declarative and imperative in React.js?.
-      </strong>{" "}
-      Disponível em
-      https://stackoverflow.com/questions/33655534/difference-between-declarative-and-imperative-in-react-js.
-      Acessado em 22 de janeiro de 2021.
-      <strong>Styling Components In React.</strong> Disponível em
-      https://www.smashingmagazine.com/2020/05/styling-components-react.
-      Acessado em 23 de janeiro de 2021.
+      <p>
+        <strong>What is Declarative UI?.</strong> Disponível em
+        https://softwareengineering.stackexchange.com/questions/173354/what-is-declarative-ui.
+        Acessado em 21 de janeiro de 2021.
+      </p>
+
+      <p>
+        <strong>What is Declarative UI?.</strong> Disponível em
+        https://old.black/2020/10/06/what-is-declarative-ui/ . Acessado em 21 de
+        janeiro de 2021.
+      </p>
+
+      <p>
+        <strong>
+          Difference between declarative and imperative in React.js?.
+        </strong>{" "}
+        Disponível em
+        https://stackoverflow.com/questions/33655534/difference-between-declarative-and-imperative-in-react-js.
+        Acessado em 22 de janeiro de 2021.
+      </p>
+      
+      <p>
+        <strong>Styling Components In React.</strong> Disponível em
+        https://www.smashingmagazine.com/2020/05/styling-components-react.
+        Acessado em 23 de janeiro de 2021.
+      </p>
     </Layout>
   );
 };
