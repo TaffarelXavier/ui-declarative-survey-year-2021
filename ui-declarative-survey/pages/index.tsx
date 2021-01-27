@@ -26,9 +26,13 @@ interface IPackage {
 
 interface PropsPackage {
   data: IPackage[][];
+  date?: string
 }
 
-const markdown = `# Esta é uma pesquisa que avalia de forma sintética a interface de pacotes que usam _UI declarative_ em janeiro de 2021
+const markdown = `# Esta é uma pesquisa que avalia de forma sintética a interface de pacotes que usam _UI declarative_.
+
+----
+Detalhe os dados são atualizados periódico e automaticamente.
 
 ## Glossário
 
@@ -139,7 +143,71 @@ const IndexPage: NextPage<PropsPackage> = (props) => {
 
   return (
     <Layout title="UI Declarative Survey Year 2021">
+      <br/>
       <MuDAta />
+    <p>
+      Última atualização de dados: {props.date}
+    </p>
+      {props.data[2].map((el: Survey, index) => {
+        return (
+          <div
+            key={el.name}
+            style={{ marginBottom: 20, borderBottom: "1px solid #ccc" }}
+          >
+            <h3>
+              <strong>
+                {index + 1}. {el.name}
+              </strong>
+            </h3>
+            <p>{el.about}</p>
+            <table
+              style={{ border: "1px solid #ccc", borderCollapse: "collapse" }}
+            >
+              <tbody>
+                <tr style={{ border: "1px solid  #ccc" }}>
+                  <td style={{ border: "1px solid  #ccc" }}>Github:</td>
+                  <td style={{ border: "1px solid  #ccc" }}>
+                    <a href={el.github} target="_blank">{el.github}</a>
+                  </td>
+                </tr>
+                <tr style={{ border: "1px solid  #ccc" }}>
+                  <td style={{ border: "1px solid  #ccc" }}>Star:</td>
+                  <td style={{ border: "1px solid  #ccc" }}>{el.Star}</td>
+                </tr>
+                <tr style={{ border: "1px solid  #ccc" }}>
+                  <td style={{ border: "1px solid  #ccc" }}>Issues</td>
+                  <td style={{ border: "1px solid  #ccc" }}>{el.Issues}</td>
+                </tr>
+                <tr style={{ border: "1px solid  #ccc" }}>
+                  <td style={{ border: "1px solid  #ccc" }}>Stackoverflow</td>
+                  <td style={{ border: "1px solid  #ccc" }}>
+                    {props.data[1][index].package}
+                  </td>
+                </tr>
+                <tr style={{ border: "1px solid  #ccc" }}>
+                  <td style={{ border: "1px solid  #ccc" }}>Contribuidores</td>
+                  <td style={{ border: "1px solid  #ccc" }}>
+                    {props.data[0][index].package}
+                  </td>
+                </tr>
+                <tr style={{ border: "1px solid  #ccc" }}>
+                  <td style={{ border: "1px solid  #ccc" }}>NPM</td>
+                  <td style={{ border: "1px solid  #ccc" }}>{el.NPM}</td>
+                </tr>
+              </tbody>
+            </table>
+            <br />
+            Site:{" "}
+            <a href={el.site} target="_blank">
+              {el.site}
+            </a>
+          </div>
+        );
+      })}
+
+      <h1>
+        <strong>Gráficos</strong>
+      </h1>
       <div className="row">
         <div className="col-md-12 col-sm-12 text-center">
           <Grafico data={[...Star]} type="star" />
@@ -169,57 +237,25 @@ const IndexPage: NextPage<PropsPackage> = (props) => {
           <Grafico data={[...props.data[0]]} type="npm" />
         </div>
       </div>
-      <hr />
-      {props.data[2].map((el: Survey, index) => {
-      return (
-        <div key={el.name}>
-          <h2>
-            {index + 1}. {el.name}
-          </h2>
-          <p>{el.about}</p>
-          <table style={{border:"1px solid #ccc", borderCollapse:"collapse"}}>
-            <tbody>
-              <tr style={{ border: "1px solid  #ccc" }}>
-                <td style={{ border: "1px solid  #ccc" }}>Github:</td>
-                <td style={{ border: "1px solid  #ccc" }}>
-                  <a href="${github}">{el.github}</a>
-                </td>
-              </tr>
-              <tr style={{ border: "1px solid  #ccc" }}>
-                <td style={{ border: "1px solid  #ccc" }}>Star:</td>
-                <td style={{ border: "1px solid  #ccc" }}>{el.Star}</td>
-              </tr>
-              <tr style={{ border: "1px solid  #ccc" }}>
-                <td style={{ border: "1px solid  #ccc" }}>Issues</td>
-                <td style={{ border: "1px solid  #ccc" }}>{el.Issues}</td>
-              </tr>
-              <tr style={{ border: "1px solid  #ccc" }}>
-                <td style={{ border: "1px solid  #ccc" }}>Stackoverflow</td>
-                <td style={{ border: "1px solid  #ccc" }}>{props.data[1][index].package}</td>
-              </tr>
-              <tr style={{ border: "1px solid  #ccc" }}>
-                <td style={{ border: "1px solid  #ccc" }}>Contribuidores</td>
-                <td style={{ border: "1px solid  #ccc" }}>{props.data[0][index].package}</td>
-              </tr>
-              <tr style={{ border: "1px solid  #ccc" }}>
-                <td style={{ border: "1px solid  #ccc" }}>NPM</td>
-                <td style={{ border: "1px solid  #ccc" }}>{el.NPM}</td>
-              </tr>
-            </tbody>
-          </table>
-          <br />
-          Site:{" "}
-          <a href={el.site} target="_blank">
-            {el.site}
-          </a>
-        </div>
-      );
-    })}
+      <hr/>
+      <br/>
+      <h1 className="font-weight-bold">Conclusão do autor</h1>
+      <p>
+       Já programei com as 5 desses pacotes, com exceção do <strong>Styled-system</strong>.
+        E posso afirmar que todas as documentações não deixam a desejar, todavia, há alguns pacotes que têm sempre uma funcionalidade a mais que
+        outros. Por exemplo: o Material UI tem um autocomplete fantástico, o react-boostrap tem uma tabela fantástica. O Ant-designer tem um buelplate 
+        de layout com drawer sensacional. Diante dessas afirmações e constatações, após a análise quantitativa dos dados, chego à conclusão que a melhor
+        opção é o Material-UI: mais downloads no npm, um grande leque de questões no stackoverflow,  o
+        que nos leva a entender que, ao procuramos alguma questão no site, é provável que encontraremos algo 
+        com a mesma dúvida com a qual estamos. 
+      </p>
     </Layout>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
+  const date = new Date().toLocaleString();
+
   const data = await getData([
     [
       "https://github.com/ant-design/ant-design",
@@ -274,7 +310,7 @@ export const getStaticProps: GetStaticProps = async () => {
   let newArr = [[...npm], [...stackoverflow], [...data]];
 
   return {
-    props: { data: newArr }, // will be passed to the page component as props
+    props: { data: newArr, date }, // will be passed to the page component as props
   };
 };
 

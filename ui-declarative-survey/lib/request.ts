@@ -2,8 +2,16 @@ import { Survey } from "../interfaces/index";
 import axios from "axios";
 import cheerio from "cheerio";
 
+interface IData {
+  githubUrl: string;
+  name: string;
+  site: string;
+}
+
 export async function getData(urlGithub: string[][]): Promise<any[]> {
   let myData: any[];
+
+  let contributors: any;
 
   myData = urlGithub.map(async (url) => {
     const [githubUrl, name, site] = url;
@@ -18,15 +26,53 @@ export async function getData(urlGithub: string[][]): Promise<any[]> {
 
     const issues = $(".d-flex > a > span.Counter");
 
-    const Contribuidores = $(".mb-3 > .link-gray-dark span.Counter");
+    const Contribuidores = $("h2>a>span");
 
+    if (name == "Ant-Designer") {
+      contributors = $(Contribuidores[2])
+        .attr("title")
+        ?.trim()
+        .replace(/\D+/gim, "");
+    } else if (name == "Material-UI") {
+      contributors = $(Contribuidores[2])
+        .attr("title")
+        ?.trim()
+        .replace(/\D+/gim, "");
+    } else if (name == "Chackra-ui") {
+      contributors = $(Contribuidores[3])
+        .attr("title")
+        ?.trim()
+        .replace(/\D+/gim, "");
+    } else if (name == "Styled-system") {
+      contributors = $(Contribuidores[3])
+        .attr("title")
+        ?.trim()
+        .replace(/\D+/gim, "");
+    } else if (name == "Semantic-UI-React") {
+      contributors = $(Contribuidores[3])
+        .attr("title")
+        ?.trim()
+        .replace(/\D+/gim, "");
+    } else if (name == "React-Bootstrap") {
+      contributors = $(Contribuidores[3])
+        .attr("title")
+        ?.trim()
+        .replace(/\D+/gim, "");
+    }
+
+    //Ant 2
+    //Material 2
+    //Chackra-ui 3
+    //Styled-system 3
+    //Semantic-UI-React 3
+    //React 3
     return new Promise<Survey>((resolve) => {
       resolve({
         name,
         site,
-        Star: $(star[0]).text().trim().trim().replace(/\D+/gmi,""),
-        Issues: $(issues[1]).text().trim().replace(/\D+/gmi,""),
-        Contribuidores: $(Contribuidores[1]).text().trim().replace(/\D+/gmi,""),
+        Star: $(star[0]).attr("aria-label")?.trim().replace(/\D+/gim, ""),
+        Issues: $(issues[1]).text().trim().replace(/\D+/gim, ""),
+        Contribuidores: contributors,
         github: githubUrl,
         about: "Sobre",
         Stackoverflow: "",
@@ -51,7 +97,7 @@ export async function readDataFromPackageNpm(urlNpm: string[]): Promise<any[]> {
     const countDownload = $(".flex-row-reverse>p");
 
     return new Promise<any>((resolve) => {
-      resolve(+$($(countDownload)[0]).text().trim().replace(/\D+/gmi,""));
+      resolve(+$($(countDownload)[0]).text().trim().replace(/\D+/gim, ""));
     });
   });
 
@@ -75,7 +121,7 @@ export async function readDataFromStackOverFlow(
     const stackoverflow = $(".fs-body3");
 
     return new Promise<any>((resolve) => {
-      resolve(+$($(stackoverflow)[0]).text().trim().replace(/\D+/gmi,""));
+      resolve(+$($(stackoverflow)[0]).text().trim().replace(/\D+/gim, ""));
     });
   });
 

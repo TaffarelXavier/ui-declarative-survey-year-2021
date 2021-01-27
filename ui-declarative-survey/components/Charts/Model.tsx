@@ -49,7 +49,7 @@ const App: NextPage<IProps> = ({ data, type }) => {
   if (type == "star") {
     return (
       <>
-        <h1 className="font-weight-bold text-center">Variável: Start (Github)</h1>
+        <h2 className="font-weight-bold text-center">Variável: Start (Github)</h2>
         <Doughnut data={response} />
       </>
     );
@@ -58,7 +58,7 @@ const App: NextPage<IProps> = ({ data, type }) => {
   if (type == "issues") {
     return (
       <>
-        <h1 className="font-weight-bold text-center">Variável: Issues (Github)</h1>
+        <h2 className="font-weight-bold text-center">Variável: Issues (Github)</h2>
         <Doughnut data={response} />
       </>
     );
@@ -67,7 +67,7 @@ const App: NextPage<IProps> = ({ data, type }) => {
   if (type == "contributors") {
     return (
       <>
-        <h1 className="font-weight-bold text-center">Variável: Contribuidores (Github)</h1>
+        <h2 className="font-weight-bold text-center">Variável: Contribuidores (Github)</h2>
         <Doughnut data={response} />
       </>
     );
@@ -75,9 +75,9 @@ const App: NextPage<IProps> = ({ data, type }) => {
   if (type == "ask_questions") {
     return (
       <>
-        <h1 className="font-weight-bold text-center">
+        <h2 className="font-weight-bold text-center">
           Variável: Questões no Stackoverflow
-        </h1>
+        </h2>
         <Doughnut data={response} />
       </>
     );
@@ -85,7 +85,7 @@ const App: NextPage<IProps> = ({ data, type }) => {
   if (type == "npm") {
     return (
       <>
-        <h1 className="font-weight-bold text-center">Variável: NPM</h1>
+        <h2 className="font-weight-bold text-center">Variável: NPM</h2>
         <Doughnut data={response} />
       </>
     );

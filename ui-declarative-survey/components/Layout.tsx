@@ -16,6 +16,8 @@ const Layout = ({ children, title = "This is the default title" }: Props) => (
     </Head>
     <main className="main">
       {children}
+       <br/><br/>
+       <hr/>
       <footer>
         <span>&copy; 2021 <strong> - Taffarel Xavier</strong></span>
         <ul className="network-media">
