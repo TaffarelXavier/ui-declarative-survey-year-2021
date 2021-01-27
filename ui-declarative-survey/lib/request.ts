@@ -14,7 +14,7 @@ export async function getData(urlGithub: string[][]): Promise<any[]> {
   let contributors: any;
 
   myData = urlGithub.map(async (url) => {
-    const [githubUrl, name, site] = url;
+    const [githubUrl, name, site, about] = url;
 
     const data = await axios(githubUrl);
 
@@ -74,7 +74,7 @@ export async function getData(urlGithub: string[][]): Promise<any[]> {
         Issues: $(issues[1]).text().trim().replace(/\D+/gim, ""),
         Contribuidores: contributors,
         github: githubUrl,
-        about: "Sobre",
+        about,
         Stackoverflow: "",
         NPM: "",
       });

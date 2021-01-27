@@ -26,11 +26,11 @@ interface IPackage {
 
 interface PropsPackage {
   data: IPackage[][];
-  date?: string
+  date?: string;
 }
 
 const markdown = `# Esta é uma pesquisa que avalia de forma sintética a interface de pacotes que usam _UI declarative_.
-
+Por Taffarel Xavier
 ----
 Detalhe os dados são atualizados periódico e automaticamente.
 
@@ -143,11 +143,9 @@ const IndexPage: NextPage<PropsPackage> = (props) => {
 
   return (
     <Layout title="UI Declarative Survey Year 2021">
-      <br/>
+      <br />
       <MuDAta />
-    <p>
-      Última atualização de dados: {props.date}
-    </p>
+      <p>Última atualização de dados: {props.date}</p>
       {props.data[2].map((el: Survey, index) => {
         return (
           <div
@@ -167,7 +165,9 @@ const IndexPage: NextPage<PropsPackage> = (props) => {
                 <tr style={{ border: "1px solid  #ccc" }}>
                   <td style={{ border: "1px solid  #ccc" }}>Github:</td>
                   <td style={{ border: "1px solid  #ccc" }}>
-                    <a href={el.github} target="_blank">{el.github}</a>
+                    <a href={el.github} target="_blank">
+                      {el.github}
+                    </a>
                   </td>
                 </tr>
                 <tr style={{ border: "1px solid  #ccc" }}>
@@ -237,17 +237,22 @@ const IndexPage: NextPage<PropsPackage> = (props) => {
           <Grafico data={[...props.data[0]]} type="npm" />
         </div>
       </div>
-      <hr/>
-      <br/>
+      <hr />
+      <br />
       <h1 className="font-weight-bold">Conclusão do autor</h1>
       <p>
-       Já programei com as 5 desses pacotes, com exceção do <strong>Styled-system</strong>.
-        E posso afirmar que todas as documentações não deixam a desejar, todavia, há alguns pacotes que têm sempre uma funcionalidade a mais que
-        outros. Por exemplo: o Material UI tem um autocomplete fantástico, o react-boostrap tem uma tabela fantástica. O Ant-designer tem um buelplate 
-        de layout com drawer sensacional. Diante dessas afirmações e constatações, após a análise quantitativa dos dados, chego à conclusão que a melhor
-        opção é o Material-UI: mais downloads no npm, um grande leque de questões no stackoverflow,  o
-        que nos leva a entender que, ao procuramos alguma questão no site, é provável que encontraremos algo 
-        com a mesma dúvida com a qual estamos. 
+        Já programei com as 5 desses pacotes, com exceção do{" "}
+        <strong>Styled-system</strong>. E posso afirmar que todas as
+        documentações não deixam a desejar, todavia, há alguns pacotes que têm
+        sempre uma funcionalidade a mais que outros. Por exemplo: o Material UI
+        tem um autocomplete fantástico, o react-boostrap tem uma tabela
+        fantástica. O Ant-designer tem um buelplate de layout com drawer
+        sensacional. Diante dessas afirmações e constatações, após a análise
+        quantitativa dos dados, chego à conclusão que a melhor opção é o
+        Material-UI: mais downloads no npm, um grande leque de questões no
+        stackoverflow, o que nos leva a entender que, ao procuramos alguma
+        questão no site, é provável que encontraremos algo com a mesma dúvida
+        com a qual estamos.
       </p>
     </Layout>
   );
@@ -261,31 +266,37 @@ export const getStaticProps: GetStaticProps = async () => {
       "https://github.com/ant-design/ant-design",
       "Ant-Designer",
       "https://ant.design",
+      "Um sistema de design para produtos de nível empresarial. Crie uma experiência de trabalho eficiente e agradável.",
     ],
     [
       "https://github.com/mui-org/material-ui",
       "Material-UI",
       "https://material-ui.com",
+      "Biblioteca de componentes React para um desenvolvimento ágil e fácil. Construa seu próprio design, ou comece com Material Design.",
     ],
     [
       "https://github.com/chakra-ui/chakra-ui",
       "Chackra-ui",
       "https://chakra-ui.com/",
+      "Chakra UI é uma biblioteca de componentes simples, modular e acessível que fornece os blocos de construção de que você precisa para construir seus aplicativos React.",
     ],
     [
       "https://github.com/styled-system/styled-system",
       "Styled-system",
       "https://styled-system.com/",
+      "O Styled System permite que você crie rapidamente componentes de UI personalizados com adereços de estilo baseados em restrições com base em escalas definidas em seu tema."
     ],
     [
       "https://github.com/Semantic-Org/Semantic-UI-React",
       "Semantic-UI-React",
-      "https://semantic-ui.com/introduction/integrations.html",
+      "https://react.semantic-ui.com/",
+      "O Semantic UI é um framework de desenvolvimento rápido que te ajuda a criar layouts responsivos utilizando o HTML de uma forma simples e fácil."
     ],
     [
       "https://github.com/react-bootstrap/react-bootstrap",
       "React-Bootstrap",
       "https://react-bootstrap.github.io/",
+      'Projete e personalize rapidamente sites mobile-first responsivos com Bootstrap, o kit de ferramentas de front-end open source mais popular do mundo, apresentando variáveis ​​e mixins Sass, sistema de grade responsivo, extensos componentes pré-construídos e poderosos plug-ins JavaScript.'
     ],
   ]);
 
