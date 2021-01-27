@@ -11,7 +11,7 @@ const App = () => {
         /> */}
         <meta
           name="twitter:image:src"
-          content="https://material-ui.com/static/logo_raw.svg"
+          content="https://ui-declarative-survey.vercel.app/68747470733a2f2f6d6174657269616c2d75692e636f6d2f7374617469632f6c6f676f2e737667.png"
         />
         <meta name="twitter:site" content="site" />
         <meta
@@ -28,7 +28,7 @@ const App = () => {
         />
         <meta
           property="og:image"
-          content="https://material-ui.com/static/logo_raw.svg"
+          content="https://ui-declarative-survey.vercel.app/68747470733a2f2f6d6174657269616c2d75692e636f6d2f7374617469632f6c6f676f2e737667.png"
         />
         {/* <meta
           property="og:image"
