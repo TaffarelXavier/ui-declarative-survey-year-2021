@@ -5,9 +5,13 @@ const App = () => {
     <>
       <Head>
           <title>UI declarative Survey: Ant-designer, Material-UI, Chackra-ui, Styled-system, Semantic-UI-React, React-Bootstrap</title>
-        <meta
+        {/* <meta
           name="twitter:image:src"
           content="https://repository-images.githubusercontent.com/34526884/e3ca9980-dbc4-11ea-9588-d673f3529c19"
+        /> */}
+        <meta
+          name="twitter:image:src"
+          content="https://material-ui.com/static/logo_raw.svg"
         />
         <meta name="twitter:site" content="site" />
         <meta
@@ -24,8 +28,12 @@ const App = () => {
         />
         <meta
           property="og:image"
-          content="https://repository-images.githubusercontent.com/34526884/e3ca9980-dbc4-11ea-9588-d673f3529c19"
+          content="https://material-ui.com/static/logo_raw.svg"
         />
+        {/* <meta
+          property="og:image"
+          content="https://repository-images.githubusercontent.com/34526884/e3ca9980-dbc4-11ea-9588-d673f3529c19"
+        /> */}
         <meta property="og:site_name" content="ui-declarative-survey" />
         <meta property="og:type" content="site" />
         <meta
