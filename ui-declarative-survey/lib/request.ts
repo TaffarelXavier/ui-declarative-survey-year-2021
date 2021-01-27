@@ -2,11 +2,11 @@ import { Survey } from "../interfaces/index";
 import axios from "axios";
 import cheerio from "cheerio";
 
-interface IData {
-  githubUrl: string;
-  name: string;
-  site: string;
-}
+// interface IData {
+//   githubUrl: string;
+//   name: string;
+//   site: string;
+// }
 
 export async function getData(urlGithub: string[][]): Promise<any[]> {
   let myData: any[];
