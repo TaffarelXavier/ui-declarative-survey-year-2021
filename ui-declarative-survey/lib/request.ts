@@ -24,9 +24,9 @@ export async function getData(urlGithub: string[][]): Promise<any[]> {
       resolve({
         name,
         site,
-        Star: $(star[0]).text().trim(),
-        Issues: $(issues[1]).text(),
-        Contribuidores: $(Contribuidores[1]).text().trim(),
+        Star: $(star[0]).text().trim().trim().replace(/\D+/gmi,""),
+        Issues: $(issues[1]).text().trim().replace(/\D+/gmi,""),
+        Contribuidores: $(Contribuidores[1]).text().trim().replace(/\D+/gmi,""),
         github: githubUrl,
         about: "Sobre",
         Stackoverflow: "",
@@ -51,7 +51,7 @@ export async function readDataFromPackageNpm(urlNpm: string[]): Promise<any[]> {
     const countDownload = $(".flex-row-reverse>p");
 
     return new Promise<any>((resolve) => {
-      resolve({package:$($(countDownload)[0]).text(), name:url});
+      resolve(+$($(countDownload)[0]).text().trim().replace(/\D+/gmi,""));
     });
   });
 
@@ -75,7 +75,7 @@ export async function readDataFromStackOverFlow(
     const stackoverflow = $(".fs-body3");
 
     return new Promise<any>((resolve) => {
-      resolve({ package: $($(stackoverflow)[0]).text().trim(), name: url });
+      resolve(+$($(stackoverflow)[0]).text().trim().replace(/\D+/gmi,""));
     });
   });
 

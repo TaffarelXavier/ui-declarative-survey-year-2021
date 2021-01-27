@@ -5,12 +5,23 @@ import { Survey } from "../interfaces/index";
 import {
   getData,
   readDataFromPackageNpm,
-  readDataFromStackOverFlow
+  readDataFromStackOverFlow,
 } from "../lib/request";
+
+import Grafico from "@/components/Charts/Model";
+// import Issues from "@/components/Charts/Issues";
 
 interface IPackage {
   package?: string;
   name?: string;
+  site?: string;
+  Star?: string;
+  Issues?: string;
+  Contribuidores?: string;
+  github?: string;
+  about?: string;
+  Stackoverflow?: string;
+  NPM?: string;
 }
 
 interface PropsPackage {
@@ -36,7 +47,7 @@ const markdown = `# Esta é uma pesquisa que avalia de forma sintética a interf
   4. Styled-system
   5. Semantic-UI-React
   6. React-Bootstrap
-
+- [Gráficos]()
 # Introdução
 
 Desde os primórdios da web, que programadores de todas as idades trabalham com css, visto que é um ponto fundamental para que haja estilização nas páginas no desenvolvimento web. Para tanto, até os anos 2010, eram usados seletores como ID, classes, etc. Porém, com o advento da web e a progressão exponencial de informações, houve a necessidade de criar ferramentas que atendessem essa demanda de forma mais eficaz. É aí que surge o paradigma da UI Declarativa. Nesse padrão, as coisas funcionam um pouco diferente, a forma de estilização vem dentro do html, em cada elemento, usando props, por exemplo, no react js.
@@ -87,8 +98,7 @@ if (this.state.liked) {
 5. Semantic-UI
 6. React-Bootstrap
 
-> **Nota sobre o styled-components**\n
-> O motivo pelo qual não o coloquei é que, na verdade, styled-components não é uma lib declarativa, antes, usa CSS-in-JS.
+> **Nota sobre o styled-components:**\no motivo pelo qual não o coloquei é que, na verdade, __styled-components__ não é uma lib declarativa, antes, usa CSS-in-JS.
 
 ---
 
@@ -110,11 +120,57 @@ const MuDAta = () => {
   );
 };
 
-const IndexPage: NextPage<PropsPackage> = (props) => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <MuDAta />
+const IndexPage: NextPage<PropsPackage> = (props) => {
+  const myDataArr: IPackage[] = props.data[2];
 
-    {props.data[2].map((el: Survey, index) => {
+  if (!myDataArr) return null;
+
+  const Contribuidores = myDataArr.map((el: IPackage) => {
+    return el.Contribuidores ? +el.Contribuidores : 0;
+  });
+
+  const Star = myDataArr.map((el) => {
+    return el.Star ? +el.Star : 0;
+  });
+
+  const Issues = myDataArr.map((el) => {
+    return el.Issues ? +el.Issues : 0;
+  });
+
+  return (
+    <Layout title="UI Declarative Survey Year 2021">
+      <MuDAta />
+      <div className="row">
+        <div className="col-md-12 col-sm-12 text-center">
+          <Grafico data={[...Star]} type="star" />
+        </div>
+      </div>
+      <hr />
+      <div className="row">
+        <div className="col-md-12 col-sm-12">
+          <Grafico data={[...Issues]} type="issues" />
+        </div>
+      </div>
+      <hr />
+      <div className="row">
+        <div className="col-md-12 col-sm-12">
+          <Grafico data={[...Contribuidores]} type="contributors" />
+        </div>
+      </div>
+      <hr />
+      <div className="row">
+        <div className="col-md-12 col-sm-12">
+          <Grafico data={[...props.data[1]]} type="ask_questions" />
+        </div>
+      </div>
+      <hr />
+      <div className="row">
+        <div className="col-md-12 col-sm-12">
+          <Grafico data={[...props.data[0]]} type="npm" />
+        </div>
+      </div>
+      <hr />
+      {props.data[2].map((el: Survey, index) => {
       return (
         <div key={el.name}>
           <h2>
@@ -159,8 +215,9 @@ const IndexPage: NextPage<PropsPackage> = (props) => (
         </div>
       );
     })}
-  </Layout>
-);
+    </Layout>
+  );
+};
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await getData([

@@ -21,11 +21,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap"
             rel="stylesheet"
           />
-          {/* <style jsx global>{`
-            body {
-              font-family: "Nunito", sans-serif;
-            }
-          `}</style> */}
+          <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossOrigin="anonymous" />
         </Head>
         <body>
           <Main />
