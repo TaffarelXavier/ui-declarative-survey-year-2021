@@ -30,7 +30,7 @@ interface PropsPackage {
 }
 
 const markdown = `# Esta é uma pesquisa que avalia de forma sintética a interface de pacotes que usam _UI declarative_.
-
+----
 Por Taffarel Xavier | [github](https://github.com/TaffarelXavier) | [Pt.Stackoverflow](https://pt.stackoverflow.com/users/66026/taffarel-xavier)
 ----
 Detalhe os dados são atualizados periódico e automaticamente.
@@ -250,13 +250,15 @@ const IndexPage: NextPage<PropsPackage> = (props) => {
         documentações não deixam a desejar, todavia, há alguns pacotes que têm
         sempre uma funcionalidade a mais que outros. Por exemplo: o Material UI
         tem um autocomplete fantástico, o react-boostrap tem uma tabela
-        fantástica. O Ant-designer tem um buelplate de layout com drawer
+        fantástica. O Ant-designer tem um _boilerplate_ de layout com drawer
         sensacional. Diante dessas afirmações e constatações, após a análise
         quantitativa dos dados, chego à conclusão que a melhor opção é o
         Material-UI: mais downloads no npm, um grande leque de questões no
         stackoverflow, o que nos leva a entender que, ao procuramos alguma
         questão no site, é provável que encontraremos algo com a mesma dúvida
-        com a qual estamos.
+        com a qual estamos, além disso, o MUI tem o maior número de contribuidores, 
+        mas não há tantas issues quanto o Ant-design. Dessa forma, hoje, em um novo projeto,
+        optaria pelo Material-UI.
       </p>
     </Layout>
   );
