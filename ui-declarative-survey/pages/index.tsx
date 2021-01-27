@@ -162,7 +162,7 @@ const IndexPage: NextPage<PropsPackage> = (props) => {
         return (
           <div
             key={el.name}
-            style={{ marginBottom: 30, borderBottom: "1px solid #ccc" }}
+            style={{ marginBottom: 30, borderBottom: "1px solid #ccc", paddingBottom:20 }}
           >
             <h3>
               <strong>
